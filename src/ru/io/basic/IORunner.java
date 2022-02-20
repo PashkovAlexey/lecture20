@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 
 public class IORunner {
@@ -28,10 +27,10 @@ public class IORunner {
             System.out.println(s);
 
             File f2 = new File("file/personDB2.txt");
-            if (f2.exists()) f2.createNewFile();
+            if (!f2.exists()) f2.createNewFile();
 
             fw = new FileWriter(f2, true);
-            fw.append(sc.nextLine());
+            fw.append(sc.nextLine() + "\n");
 
             fw.flush();
 
